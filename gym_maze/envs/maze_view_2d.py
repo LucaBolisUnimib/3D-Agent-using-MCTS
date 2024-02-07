@@ -117,7 +117,10 @@ class MazeView2D:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.__game_over = True
-                    self.quit_game()
+                    self.quit_game() 
+                elif event.type == pygame.KEYDOWN and event.unicode.upper() in self.__maze.COMPASS.keys():
+                    self.move_robot(event.unicode.upper()) 
+                    self.__view_update()
 
     def __view_update(self, mode="human"):
         if not self.__game_over:
@@ -206,7 +209,7 @@ class MazeView2D:
         pygame.draw.circle(self.maze_layer, colour + (transparency,), (x, y), r)
 
     def __draw_entrance(self, colour=(0, 0, 150), transparency=235):
-
+        return
         self.__colour_cell(self.entrance, colour=colour, transparency=transparency)
 
     def __draw_goal(self, colour=(150, 0, 0), transparency=235):
