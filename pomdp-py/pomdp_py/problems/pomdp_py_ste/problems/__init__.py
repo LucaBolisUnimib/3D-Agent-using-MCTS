@@ -1,0 +1,1 @@
+from pomdp_py.problems import multi_object_search
