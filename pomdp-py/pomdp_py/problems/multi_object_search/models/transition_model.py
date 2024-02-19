@@ -30,6 +30,7 @@ class MosTransitionModel(pomdp_py.OOTransitionModel):
         for_env (bool): True if this is a robot transition model used by the
              Environment.  see RobotTransitionModel for details.
         """
+        #print("DEBUG9", sensors)
         self._sensors = sensors
         transition_models = {
             objid: StaticObjectTransitionModel(objid, epsilon=epsilon)
@@ -158,6 +159,7 @@ class RobotTransitionModel(pomdp_py.TransitionModel):
                 if (
                     state.object_states[objid].objclass == "target"
                     and z.objposes[objid] != ObjectObservation.NULL
+                    and objid == len(robot_state.objects_found)
                 )
             }
             next_robot_state["objects_found"] = tuple(

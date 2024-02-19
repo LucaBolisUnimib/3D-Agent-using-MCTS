@@ -10,11 +10,9 @@ from pomdp_py.problems.multi_object_search.agent.agent import *
 from pomdp_py.problems.multi_object_search.example_worlds import *
 from pomdp_py.problems.multi_object_search.domain.observation import *
 from pomdp_py.problems.multi_object_search.models.components.grid_map import *
-
 import argparse
 import time
 import random
-import numpy as np
 import maps
 
 
@@ -32,9 +30,7 @@ class MosOOPOMDP(pomdp_py.OOPOMDP):
     could construct an Environment object and give None to
     the object poses.
     """
-    def print_prior(self):
-        print("Prior:", self.prior)
-    
+
     def __init__(
         self,
         robot_id,
@@ -91,13 +87,12 @@ class MosOOPOMDP(pomdp_py.OOPOMDP):
                 prior = {}
             elif prior == "informed":
                 prior = {}
-                # [(4, 5), (6, 9), (8, 3), (9, 2), (9, 5)]
                 for objid in env.target_objects:
                     groundtruth_pose = env.state.pose(objid)
-                    print("HEY Prior")
-                    prior[objid] = {groundtruth_pose: 1.0}
-                    print(prior)
-
+                    # print(groundtruth_pose)
+                    prior[objid] = {groundtruth_pose: 0.9}
+                    # print(prior)
+                    # print(env.target_objects)
         # Potential extension: a multi-agent POMDP. For now, the environment
         # can keep track of the states of multiple agents, but a POMDP is still
         # only defined over a single agent. Perhaps, MultiAgent is just a kind
@@ -125,10 +120,6 @@ class MosOOPOMDP(pomdp_py.OOPOMDP):
             num_particles=num_particles,
             grid_map=grid_map,
         )
-        
-        print("init")
-        print(agent.cur_belief.object_beliefs[4])
-
         super().__init__(
             agent,
             env,
@@ -142,23 +133,23 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
     through planner update (e.g. when planner is POMCP)."""
     # Updates the planner; In case of POMCP, agent's belief is also updated.
     
-    print("prima")
-    print(agent.cur_belief.object_beliefs[0])
+    # print("prima")
+    #print(agent.cur_belief.object_beliefs[4])
     
     planner.update(agent, real_action, real_observation)
-    print("dopo")
-    print(agent.cur_belief.object_beliefs[0])
+    # print("dopo")
+    #print(agent.cur_belief.object_beliefs[4])
 
     #print(dir(agent))
 
     # Update agent's belief, when planner is not POMCP
     if not isinstance(planner, pomdp_py.POMCP):
         print("#######################")
-        print(agent.cur_belief.object_beliefs)
+        # print(agent.cur_belief.object_beliefs)
         # Update belief for every object
         for objid in agent.cur_belief.object_beliefs:
             belief_obj = agent.cur_belief.object_belief(objid)
-            print(belief_obj)
+            print("ABCDE", belief_obj)
             if isinstance(belief_obj, pomdp_py.Histogram):
                 if objid == agent.robot_id:
                     # Assuming the agent can observe its own state:
@@ -212,7 +203,6 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
                         # The agent knows the objects are static.
                         static_transition=objid != agent.robot_id,
                         oargs={"next_robot_state": next_robot_state},
-                        normalize = False
                     )
             else:
                 raise ValueError(
@@ -375,9 +365,13 @@ def solve(
 # Test
 ROBOT_CHAR = "r" # r is the robot character
 def unittest():
-    # grid_map = np.random.choice(maps.dispositions, 1, p = maps.probabilty)[0]
-    grid_map = maps.dispositions[0];
-    print(grid_map)
+    disposition = maps.dispositions[maps.dispositionid]
+    # print(disposition)
+    grid_map = list(maps.default_grid)
+    for obj in disposition:
+        grid_map[obj[0] * (maps.width + 1) + obj[1]] = "T"
+    grid_map = "".join(grid_map)
+    # print(grid_map)
     proxstr = make_proximity_sensor(1, False)
     problem = MosOOPOMDP(
         ROBOT_CHAR, 
@@ -385,16 +379,16 @@ def unittest():
         epsilon=0.95,  # observation model parameter
         grid_map=grid_map,
         sensors={ROBOT_CHAR: proxstr},
-        belief_rep="histogram",
         prior="informed",
         agent_has_map=True,
     )
+    # print(problem.agent.cur_belief.object_beliefs)
     solve(
         problem,
-        max_depth=20,
+        max_depth=10,
         discount_factor=0.99,
-        planning_time=3.0,
-        exploration_const=1000,
+        planning_time=5.0,
+        exploration_const=500,
         visualize=True,
         max_time=120,
         max_steps=25500,

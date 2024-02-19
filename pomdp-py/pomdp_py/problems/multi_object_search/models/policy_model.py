@@ -13,6 +13,7 @@ class PolicyModel(pomdp_py.RolloutPolicy):
 
     def __init__(self, robot_id, grid_map=None):
         """FindAction can only be taken after LookAction"""
+        # print("DEBUG10", grid_map)
         self.robot_id = robot_id
         self._grid_map = grid_map
 
@@ -28,20 +29,16 @@ class PolicyModel(pomdp_py.RolloutPolicy):
 
     def get_all_actions(self, state=None, history=None):
         """note: find can only happen after look."""
-        """note: no consecutive looks are allowed."""
         can_find = False
-        can_look = True
+        # print("DEBUGG", state, history)
         if history is not None and len(history) > 1:
             # last action
             last_action = history[-1][0]
-            if isinstance(last_action, FindAction):
-                can_look = False
             if isinstance(last_action, LookAction):
                 can_find = True
         find_action = [Find] if can_find else []
-        look_action = [Look] if can_look else []
         if state is None:
-            return ALL_MOTION_ACTIONS + look_action + find_action
+            return ALL_MOTION_ACTIONS + [Look] + find_action
         else:
             if self._grid_map is not None:
                 valid_motions = self._grid_map.valid_motions(

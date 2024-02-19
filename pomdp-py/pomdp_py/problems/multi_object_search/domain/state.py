@@ -44,6 +44,7 @@ class RobotState(pomdp_py.ObjectState):
     def __init__(self, robot_id, pose, objects_found, camera_direction):
         """Note: camera_direction is None unless the robot is looking at a direction,
         in which case camera_direction is the string e.g. look+x, or 'look'"""
+        # print("DEBUG5", camera_direction)
         super().__init__(
             "robot",
             {
@@ -79,6 +80,7 @@ class RobotState(pomdp_py.ObjectState):
 
 class MosOOState(pomdp_py.OOState):
     def __init__(self, object_states):
+        # print("DEBUG7", object_states)
         super().__init__(object_states)
 
     def object_pose(self, objid):

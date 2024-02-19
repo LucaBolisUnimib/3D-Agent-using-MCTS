@@ -13,7 +13,7 @@ import pomdp_py
 import random
 import copy
 from ..domain.state import *
-
+import maps
 
 class MosOOBelief(pomdp_py.OOBelief):
     """This is needed to make sure the belief is sampling the right
@@ -44,7 +44,6 @@ def initialize_belief(
     robot_orientations={},
     num_particles=100,
 ):
-    
     """
     Returns a GenerativeDistribution that is the belief representation for
     the multi-object search problem.
@@ -69,8 +68,6 @@ def initialize_belief(
     """
     #print(prior)
     #print(robot_id)
-    
-    
     if representation == "histogram":
         return _initialize_histogram_belief(
             dim, robot_id, object_ids, prior, robot_orientations
@@ -89,34 +86,49 @@ def _initialize_histogram_belief(dim, robot_id, object_ids, prior, robot_orienta
     """
     oo_hists = {}  # objid -> Histogram
     width, length = dim
-    for objid in object_ids:
+    
+    """
+    for disp in maps.dispositions:
+        if objid in prior:
+            for pose in prior[objid]:
+                state = ObjectState(objid, "target", pose)
+                hist[state] = 0.99
+                total_prob += hist[state]
+        else:
+            # no prior knowledge. So uniform.
+            for x in range(width):
+                for y in range(length):
+                    state = ObjectState(objid, "target", (x, y))
+                    hist[state] = 0.2
+                    total_prob += hist[state]
+    """
+
+    # first_obj = list(object_ids)[0] #TO FIX, con il vero id del primo oggetto (bisogna per esempio modificare env, dove vengono assegnati gli id agli oggetti)
+    for objid in range(len(object_ids)):
         hist = {}  # pose -> prob
         total_prob = 0
-        if objid == 1:
-            for pose in prior[objid]:
-                state = ObjectState(objid, "target", pose)
-                hist[state] = 1e-10
-                total_prob += hist[state]
-        elif objid in prior:
-            # prior knowledge provided. Just use the prior knowledge
-            for pose in prior[objid]:
-                state = ObjectState(objid, "target", pose)
-                hist[state] = 1.0 # prior[objid][pose] * 2000000
-                total_prob += hist[state]
-        #else:
-            # no prior knowledge. So uniform.
-            # for x in range(width):
-            #     for y in range(length):
-            #         state = ObjectState(objid, "target", (x, y))
-            #         hist[state] = 1.0
-            #         total_prob += hist[state]
-
-        # Normalize
-        #for state in hist:
-         #   hist[state] /= total_prob
+        for dispid in range(len(maps.dispositions)):
+            #print(maps.dispositions[dispid])
+            state = ObjectState(list(object_ids)[objid], "target", (maps.dispositions[dispid][objid][1], maps.dispositions[dispid][objid][0]))
+            hist[state] = maps.probabilty[dispid]
+            total_prob += hist[state]
+        
+        for state in hist:
+            hist[state] /= total_prob
 
         hist_belief = pomdp_py.Histogram(hist)
-        oo_hists[objid] = hist_belief
+        #for objid in object_ids:
+        oo_hists[list(object_ids)[objid]] = hist_belief
+    """
+    print("DEBUGGGGGGGGGG")
+    for state in hist:
+        print(state, hist[state])
+    while(True):
+        pass
+    """
+    #print("OK")
+    # Normalize
+    
 
     # For the robot, we assume it can observe its own state;
     # Its pose must have been provided in the `prior`.
@@ -176,8 +188,8 @@ def _initialize_particles_belief(
                 y = random.randrange(0, length)
                 state = ObjectState(objid, "target", (x, y))
                 particles.append(state)
-
         particles_belief = pomdp_py.Particles(particles)
+        print(particles_belief)
         oo_particles[objid] = particles_belief
 
     # Return Particles distribution which contains particles
@@ -186,8 +198,9 @@ def _initialize_particles_belief(
     for _ in range(num_particles):
         object_states = {}
         for objid in oo_particles:
-            random_particle = random.sample(oo_particles[objid], 1)[0]
-            object_states[_id] = copy.deepcopy(random_particle)
+            print(oo_particles[objid])
+            random_particle = random.sample(list(oo_particles[objid]), 1)[0]
+            object_states[objid] = copy.deepcopy(random_particle)
         particles.append(MosOOState(object_states))
     return pomdp_py.Particles(particles)
 

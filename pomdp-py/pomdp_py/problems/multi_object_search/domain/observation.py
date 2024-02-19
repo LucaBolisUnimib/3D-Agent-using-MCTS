@@ -23,6 +23,7 @@ class ObjectObservation(pomdp_py.Observation):
     NULL = None
 
     def __init__(self, objid, pose):
+        # print("DEBUG", objid, pose)
         self.objid = objid
         if type(pose) == tuple and len(pose) == 2 or pose == ObjectObservation.NULL:
             self.pose = pose
@@ -47,6 +48,7 @@ class MosOOObservation(pomdp_py.OOObservation):
         """
         objposes (dict): map from objid to 2d pose or NULL (not ObjectObservation!).
         """
+        # print("DEBUG2", objposes)
         self._hashcode = hash(frozenset(objposes.items()))
         self.objposes = objposes
 
@@ -73,6 +75,7 @@ class MosOOObservation(pomdp_py.OOObservation):
 
     def factor(self, next_state, *params, **kwargs):
         """Factor this OO-observation by objects"""
+        # print("DEBUG3", next_state)
         return {
             objid: ObjectObservation(objid, self.objposes[objid])
             for objid in next_state.object_states
@@ -82,8 +85,9 @@ class MosOOObservation(pomdp_py.OOObservation):
     @classmethod
     def merge(cls, object_observations, next_state, *params, **kwargs):
         """Merge `object_observations` into a single OOObservation object;
-
+        
         object_observation (dict): Maps from objid to ObjectObservation"""
+        # print("DEBUG8", object_observations[0].pose)
         return MosOOObservation(
             {
                 objid: object_observations[objid].pose

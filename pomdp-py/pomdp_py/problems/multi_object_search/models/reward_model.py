@@ -2,7 +2,7 @@
 
 import pomdp_py
 from pomdp_py.problems.multi_object_search.domain.action import *
-import maps as a
+
 
 class MosRewardModel(pomdp_py.RewardModel):
     def __init__(self, target_objects, big=1000, small=1, robot_id=None):
@@ -70,27 +70,25 @@ class GoalRewardModel(MosRewardModel):
                 if new_objects_count == 0:
                     # No new detection. "detect" is a bad action.
                     reward -= self.big
-
-                    
                 else:
                     # Has new detection. Award.
-                    #reward += self.big
-
-                     #Update: better reward for better prob.
-                    # Calculate the reward based on the probabilities of detected objects
-                    detected_objects = set(next_state.object_states[robot_id].objects_found) - set(state.object_states[robot_id].objects_found)
-                    for obj_id in detected_objects:
-                        if obj_id in self._target_objects:
-                            # Calculate the probability of detecting the object and adjust the reward accordingly
-                            detection_prob = a.probabilty_object[obj_id]
+                    n = 0 # len(state.object_states[robot_id].objects_found)
+                    
+                    detected_objects_now = set(next_state.object_states[robot_id].objects_found) - set(state.object_states[robot_id].objects_found)
+                    for obj_id in detected_objects_now:
+                        if obj_id in self._target_objects: #se è un Target
+                            detection_prob = 1
+                            # print("obj_id: ", obj_id)
+                            # print("len(set(state.object_states[robot_id].objects_found)" , len(next_state.object_states[robot_id].objects_found))
+                            if obj_id == len(set(state.object_states[robot_id].objects_found)):
+                                # Calculate the probability of detecting the object and adjust the reward accordingly
+                                detection_prob = 10e10
                             reward += detection_prob * self.big
+                    
+
         return reward
-'''
-                 # Calculate the reward based on the probabilities of detected objects
-                detected_objects = set(next_state.object_states[robot_id].objects_found) - set(state.object_states[robot_id].objects_found)
-                for obj_id in detected_objects:
-                    if obj_id in self._target_objects:
-                        # Calculate the probability of detecting the object and adjust the reward accordingly
-                        agent.cur_belief.object_beliefs[obj_id]
-                        reward += detection_prob * self.big
-'''
+
+"""
+detected_objects = set(next_state.object_states[robot_id].objects_found)
+                    for obj_id in detected_objects:
+"""                 

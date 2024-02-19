@@ -94,6 +94,29 @@ class ObjectObservationModel(pomdp_py.ObservationModel):
             else:
                 return 0.0
         
+        # print("DEBUG3", observation.pose)
+        
+        # print("DEBUGGGG", self._sensor.robot_id) 
+        next_robot_state = kwargs.get("next_robot_state", None)
+        robot_pose = next_robot_state.pose
+        # print(next_robot_state.objects_found)
+        object_pose = next_state.pose
+        # Compute the probability
+        zi = self._sensor.within_range(robot_pose, object_pose)
+        # print("DEBUG5", zi)
+        #if(next_state["id"] != self._objid):
+        #    prob = 1.0
+        # print("DEBUGX", zi, observation.pose)
+        if zi and observation.pose == ObjectObservation.NULL:
+            prob = 1e-100
+        elif zi: #and len(next_robot_state.objects_found) == observation.objid:
+            # print("OKKKKKKKKKKKKKKKKKKKKKKKKKK")
+            prob = 1e100
+        else:
+            prob = 1.0
+        
+        return prob
+    
         if observation.objid != self._objid:
             raise ValueError("The observation is not about the same object")
 
@@ -147,12 +170,13 @@ class ObjectObservationModel(pomdp_py.ObservationModel):
         print("|||||||||")
         print(prob)
         #prob = 1.0
-        print("LLLA", observation.objid)
-        print("LLLA", observation.pose)
-        if(observation.objid == 4):
-        #    prob = 2.0
-        #else:
-            prob = 1e-50
+        #print("LLLA", observation.objid)
+        #print("LLLA", observation.pose)
+        if(observation.objid == ObjectObservation.NULL):
+            prob = 0.0
+        else:
+            prob = 1.0
+        #prob = 1.0
         return prob
 
     def sample(self, next_state, action, **kwargs):

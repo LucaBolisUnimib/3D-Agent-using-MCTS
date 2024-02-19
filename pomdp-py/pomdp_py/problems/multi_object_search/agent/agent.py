@@ -31,7 +31,7 @@ class MosAgent(pomdp_py.Agent):
         self.robot_id = robot_id
         self._object_ids = object_ids
         self.sensor = sensor
-        print("AGENTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE2")
+
         # since the robot observes its own pose perfectly, it will have 100% prior
         # on this pose.
         prior[robot_id] = {init_robot_state.pose: 1.0}
@@ -47,7 +47,6 @@ class MosAgent(pomdp_py.Agent):
             robot_orientations={self.robot_id: rth},
             num_particles=num_particles,
         )
-        
         transition_model = MosTransitionModel(
             dim, {self.robot_id: self.sensor}, self._object_ids
         )
