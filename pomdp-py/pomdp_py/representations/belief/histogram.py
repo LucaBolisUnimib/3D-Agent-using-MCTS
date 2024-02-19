@@ -13,7 +13,8 @@ def abstraction_over_histogram(current_histogram, state_mapper):
 
 
 def update_histogram_belief(
-    current_histogram,
+    beliefs,
+    objid,
     real_action,
     real_observation,
     observation_model,
@@ -57,32 +58,32 @@ def update_histogram_belief(
     Returns:
         Histogram: the histogram distribution as a result of the update
     """
-    new_histogram = {}  # state space still the same.
-    total_prob = 0
+    probabilities_mul = []
     if next_state_space is None:
-        next_state_space = current_histogram
+        next_state_space = beliefs[objid]
     for next_state in next_state_space:
         observation_prob = observation_model.probability(
             real_observation, next_state, real_action, **oargs
         )
-        if not static_transition:
-            transition_prob = 0
-            for state in current_histogram:
-                transition_prob += (
-                    transition_model.probability(
-                        next_state, state, real_action, **targs
-                    )
-                    * current_histogram[state]
-                )
-        else:
-            transition_prob = current_histogram[next_state]
+        probabilities_mul.append(observation_prob)
 
-        new_histogram[next_state] = observation_prob * transition_prob
-        total_prob += new_histogram[next_state]
+        #new_histogram[next_state] = observation_prob * transition_prob
+        # total_prob += new_histogram[next_state] ###
+        
+    # transition_prob = current_histogram[next_state]
+        
+    for obj in beliefs:
+        new_histogram = {}  # state space still the same.
+        total_prob = 0
+        for x,next_state in enumerate(beliefs[obj]):
+            new_histogram[next_state] = beliefs[obj][next_state] * probabilities_mul[x]
+            total_prob += new_histogram[next_state]
+        print("DEBUG1", new_histogram)
 
-    # Normalize
-    if normalize:
-        for state in new_histogram:
-            if total_prob > 0:
-                new_histogram[state] /= total_prob
-    return Histogram(new_histogram)
+        #  Normalize
+        if normalize:
+            for state in new_histogram:
+                if total_prob > 0:
+                    new_histogram[state] /= total_prob
+        beliefs[obj] = Histogram(new_histogram)
+    return beliefs

@@ -149,11 +149,12 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
         # Update belief for every object
         for objid in agent.cur_belief.object_beliefs:
             belief_obj = agent.cur_belief.object_belief(objid)
-            print("ABCDE", belief_obj)
+            print(objid, belief_obj)
             if isinstance(belief_obj, pomdp_py.Histogram):
                 if objid == agent.robot_id:
                     # Assuming the agent can observe its own state:
                     new_belief = pomdp_py.Histogram({next_robot_state: 1.0})
+                    agent.cur_belief.set_object_belief(objid, new_belief)
                 else:
                     # This is doing
                     #    B(si') = normalizer * O(oi|si',sr',a) * sum_s T(si'|s,a)*B(si)
@@ -195,7 +196,8 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
                     #print("#_#")
 
                     new_belief = pomdp_py.update_histogram_belief(
-                        belief_obj,
+                        agent.cur_belief.object_beliefs,
+                        objid,
                         real_action,
                         real_observation.for_obj(objid),
                         agent.observation_model[objid],
@@ -204,13 +206,13 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
                         static_transition=objid != agent.robot_id,
                         oargs={"next_robot_state": next_robot_state},
                     )
+                    for obj in agent.cur_belief.object_beliefs:
+                        agent.cur_belief.set_object_belief(obj, new_belief[obj])
             else:
                 raise ValueError(
                     "Unexpected program state."
                     "Are you using the appropriate belief representation?"
                 )
-
-            agent.cur_belief.set_object_belief(objid, new_belief)
 
 
 ### Solve the problem with POUCT/POMCP planner ###
@@ -385,10 +387,10 @@ def unittest():
     # print(problem.agent.cur_belief.object_beliefs)
     solve(
         problem,
-        max_depth=10,
+        max_depth=30,
         discount_factor=0.99,
-        planning_time=5.0,
-        exploration_const=500,
+        planning_time=10.0,
+        exploration_const=1000,
         visualize=True,
         max_time=120,
         max_steps=25500,
