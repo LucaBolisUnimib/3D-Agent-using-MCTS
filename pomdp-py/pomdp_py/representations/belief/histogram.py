@@ -1,5 +1,6 @@
 from pomdp_py.representations.distribution.histogram import Histogram
-
+import maps
+from pomdp_py.problems.multi_object_search.domain.state import ObjectState
 
 def abstraction_over_histogram(current_histogram, state_mapper):
     state_mappings = {s: state_mapper(s) for s in current_histogram}
@@ -23,7 +24,7 @@ def update_histogram_belief(
     targs={},
     normalize=True,
     static_transition=False,
-    next_state_space=None,
+    next_state_space=None
 ):
     """
     update_histogram_belief(current_histogram, real_action, real_observation,
@@ -67,23 +68,68 @@ def update_histogram_belief(
         )
         probabilities_mul.append(observation_prob)
 
-        #new_histogram[next_state] = observation_prob * transition_prob
-        # total_prob += new_histogram[next_state] ###
-        
-    # transition_prob = current_histogram[next_state]
-        
+    """
     for obj in beliefs:
+        print("DEBUGX", beliefs[obj], obj)
         new_histogram = {}  # state space still the same.
         total_prob = 0
-        for x,next_state in enumerate(beliefs[obj]):
+        for x, next_state in enumerate(beliefs[obj]):
             new_histogram[next_state] = beliefs[obj][next_state] * probabilities_mul[x]
             total_prob += new_histogram[next_state]
         print("DEBUG1", new_histogram)
+    """
+    # print("DEBUG",beliefs)
+    for x, next_state in enumerate(beliefs[objid]):
+        # print("DEBUG", next_state) # ObjectState(target,(6, 0))
+        disp_involved = []
+        for disp in range(len(maps.dispositions)):
+            # print(next_state.pose, next_state.objid)
+            pos = maps.dispositions[disp][next_state.objid]
+            if next_state.pose == (pos[1], pos[0]):
+                disp_involved.append(disp)
+        # print("DEBUG", disp_involved) # ci stampa l'indice delle disposizioni di cui dobbiamo modificare le probabilità
+        
+       
+        for obj in range(len(maps.dispositions[0])):
+            #print(obj)
+            new_histogram = {}
+            for obj_bel in beliefs[obj]:
+                new_histogram[obj_bel] = beliefs[obj][obj_bel]
+            #print(new_histogram)
+            """
+            for disp in range(len(maps.dispositions)):
+                new_histogram =  {} # state space still the same.
+                total_prob = 0
+                state = ObjectState(, "target", (pos[1], pos[0]))
+                new_histogram[state] = beliefs[obj]
+            """
 
-        #  Normalize
-        if normalize:
+            #1 2 3 1 4 1 5
+            #1 2 3 4 5
+
+            for dispid in disp_involved:
+                pos = maps.dispositions[dispid][obj]
+                state = ObjectState(obj, "target", (pos[1], pos[0]))
+                if probabilities_mul[x] == -1.0:
+                    new_histogram.pop(state)
+                else:
+                    new_histogram[state] = beliefs[obj][state] * probabilities_mul[x]
+                #if maps.disposition[disp][]
+                #new_histogram[next_state] = beliefs[obj][next_state] * probabilities_mul[x]
+                #total_prob += new_histogram[state]
+                # print("DEBUG1", new_histogram)
+
+            total_prob = 0.0
             for state in new_histogram:
-                if total_prob > 0:
-                    new_histogram[state] /= total_prob
-        beliefs[obj] = Histogram(new_histogram)
+                #print("DEV", state, new_histogram[state])
+                total_prob += new_histogram[state]
+            #print()
+            #  Normalize
+            if normalize:
+                for state in new_histogram:
+                    if total_prob > 0:
+                        new_histogram[state] /= total_prob
+            #print("DEBUG", new_histogram, probabilities_mul[x])
+            beliefs[obj] = Histogram(new_histogram)
+    #print(beliefs, len(beliefs))
     return beliefs

@@ -108,10 +108,10 @@ class ObjectObservationModel(pomdp_py.ObservationModel):
         #    prob = 1.0
         # print("DEBUGX", zi, observation.pose)
         if zi and observation.pose == ObjectObservation.NULL:
-            prob = 1e-100
+            prob = -1.0
         elif zi: #and len(next_robot_state.objects_found) == observation.objid:
             # print("OKKKKKKKKKKKKKKKKKKKKKKKKKK")
-            prob = 1e100
+            prob = 1.0
         else:
             prob = 1.0
         

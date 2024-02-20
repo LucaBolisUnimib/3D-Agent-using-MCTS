@@ -159,9 +159,14 @@ class RobotTransitionModel(pomdp_py.TransitionModel):
                 if (
                     state.object_states[objid].objclass == "target"
                     and z.objposes[objid] != ObjectObservation.NULL
-                    #and objid == len(robot_state.objects_found)
+                    and state.object_states[objid].objid == len(robot_state["objects_found"])
                 )
             }
+            """
+            if(len(observed_target_objects) != 0):
+                print(observed_target_objects)
+                input()
+            """    
             next_robot_state["objects_found"] = tuple(
                 set(next_robot_state["objects_found"]) | set(observed_target_objects)
             )

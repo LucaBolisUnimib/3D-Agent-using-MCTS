@@ -81,16 +81,17 @@ class MosOOPOMDP(pomdp_py.OOPOMDP):
             init_state = MosOOState({**objects, **robots})
             env = MosEnvironment(dim, init_state, sensors, obstacles=obstacles)
 
+        prior = {}
         # construct prior
-        if type(prior) == str:
-            if prior == "uniform":
-                prior = {}
-            elif prior == "informed":
-                prior = {}
-                for objid in env.target_objects:
-                    groundtruth_pose = env.state.pose(objid)
+        #if type(prior) == str:
+        #    if prior == "uniform":
+        #        prior = {}
+        #    elif prior == "informed":
+        #        prior = {}
+        #        for objid in env.target_objects:
+        #            groundtruth_pose = env.state.pose(objid)
                     # print(groundtruth_pose)
-                    prior[objid] = {groundtruth_pose: 0.9}
+        #            prior[objid] = {groundtruth_pose: 0.9}
                     # print(prior)
                     # print(env.target_objects)
         # Potential extension: a multi-agent POMDP. For now, the environment
@@ -389,7 +390,7 @@ def unittest():
         problem,
         max_depth=30,
         discount_factor=0.99,
-        planning_time=10.0,
+        planning_time=300.0,
         exploration_const=1000,
         visualize=True,
         max_time=120,

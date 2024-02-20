@@ -110,9 +110,11 @@ def _initialize_histogram_belief(dim, robot_id, object_ids, prior, robot_orienta
         for dispid in range(len(maps.dispositions)):
             #print(maps.dispositions[dispid])
             state = ObjectState(list(object_ids)[objid], "target", (maps.dispositions[dispid][objid][1], maps.dispositions[dispid][objid][0]))
-            hist[state] = maps.probabilty[dispid]
-            total_prob += hist[state]
+            #if state in hist:
+            hist[state] = maps.probabilty[dispid] if state not in hist else hist[state] + maps.probabilty[dispid]
+            total_prob += maps.probabilty[dispid]
         
+        # Normalize
         for state in hist:
             hist[state] /= total_prob
 
@@ -137,7 +139,8 @@ def _initialize_histogram_belief(dim, robot_id, object_ids, prior, robot_orienta
     oo_hists[robot_id] = pomdp_py.Histogram(
         {RobotState(robot_id, init_robot_pose, (), None): 1.0}
     )
-
+    #for obj in oo_hists:
+    #    print(oo_hists[obj])
     return MosOOBelief(robot_id, oo_hists)
 
 

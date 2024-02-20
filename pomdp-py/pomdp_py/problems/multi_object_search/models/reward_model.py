@@ -57,38 +57,25 @@ class GoalRewardModel(MosRewardModel):
             reward = reward - self.small - action.distance_cost
         elif isinstance(action, LookAction):
             reward = reward - self.small
-                
         elif isinstance(action, FindAction):
             if state.object_states[robot_id]["camera_direction"] is None:
                 # The robot didn't look before detect. So nothing is in the field of view.
                 reward -= self.big
             else:
                 # transition function should've taken care of the detection.
-                new_objects_count = len(
-                    set(next_state.object_states[robot_id].objects_found)
+                new_objects_count = \
+                    set(next_state.object_states[robot_id].objects_found)\
                     - set(state.object_states[robot_id].objects_found)
-                )
-                if new_objects_count == 0:
+                
+                if len(new_objects_count) == 0:
                     # No new detection. "detect" is a bad action.
                     reward -= self.big
+                
                 else:
-                    # Has new detection. Award.
-                    reward += self.big
-                    
-                    '''
-                    n = 0 # len(state.object_states[robot_id].objects_found)
-
-                    detected_objects_now = set(next_state.object_states[robot_id].objects_found) - set(state.object_states[robot_id].objects_found)
-                    for obj_id in detected_objects_now:
-                        if obj_id in self._target_objects: #se è un Target
-                            detection_prob = 1
-                            # print("obj_id: ", obj_id)
-                            # print("len(set(state.object_states[robot_id].objects_found)" , len(next_state.object_states[robot_id].objects_found))
-                            if obj_id == len(set(state.object_states[robot_id].objects_found)):
-                                # Calculate the probability of detecting the object and adjust the reward accordingly
-                                detection_prob = 1
-                            reward += detection_prob * self.big
-                    '''
+                    #print("AAA", new_objects_count)
+                    #print("BBB", next_state.object_states[robot_id].objects_found)
+                    #print("CCC", state.object_states[robot_id].objects_found)
+                    reward += self.big * 100000
 
         return reward
 
