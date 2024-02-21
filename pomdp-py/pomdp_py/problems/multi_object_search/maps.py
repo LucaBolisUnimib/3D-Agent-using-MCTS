@@ -18,7 +18,7 @@ default_grid =  "r.........\n" + \
 length = default_grid.count("\n") + 1
 width = (len(default_grid) - length + 1) // 10
 dispositionid = np.random.choice(list(range(len(dispositions))), 1, p = probabilty)[0]
-dispositionid = 3
+#dispositionid = 3
 """
 First disposition (0.5 probability):
 r.........
