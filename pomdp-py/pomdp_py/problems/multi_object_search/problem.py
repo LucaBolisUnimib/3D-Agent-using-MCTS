@@ -330,6 +330,7 @@ def solve(
         print("Find Actions Count: %d" % _find_actions_count)
         if isinstance(planner, pomdp_py.POUCT):
             print("__num_sims__: %d" % planner.last_num_sims)
+            print()
 
         if visualize:
             # This is used to show the sensing range; Not sampled
