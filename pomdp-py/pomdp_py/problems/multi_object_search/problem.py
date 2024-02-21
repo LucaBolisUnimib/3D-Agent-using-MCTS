@@ -364,10 +364,21 @@ def solve(
             ### print("Maximum time reached.")
             ### break
 
+import sys
+import os, os.path
+from datetime import datetime
 
 # Test
 ROBOT_CHAR = "r" # r is the robot character
 def unittest():
+    #number_of_simulation = len([name for name in os.listdir('.\logs') if os.path.isfile(name)])
+    istant = datetime.now().strftime("%d_%m_%Y_%H_%M_%S_%f")
+    
+    sys.stdout = open(f".\logs\log_{istant}.txt", "w")
+
+
+
+
     disposition = maps.dispositions[maps.dispositionid]
     # print(disposition)
     grid_map = list(maps.default_grid)
