@@ -1,0 +1,780 @@
+#######################
+0 {ObjectState(target,(8, 3)): 0.2, ObjectState(target,(6, 7)): 0.7, ObjectState(target,(6, 0)): 0.05, ObjectState(target,(0, 8)): 0.05}
+1 {ObjectState(target,(1, 5)): 0.2, ObjectState(target,(1, 0)): 0.7, ObjectState(target,(6, 5)): 0.05, ObjectState(target,(3, 4)): 0.05}
+2 {ObjectState(target,(5, 4)): 0.6666666666666667, ObjectState(target,(8, 9)): 0.16666666666666669, ObjectState(target,(7, 6)): 0.16666666666666669}
+-114 {RobotState(robot,(0, 0, 0)|()): 1.0}
+==== Step 1 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): -1
+Find Actions Count: 0
+__num_sims__: 406
+#######################
+0 {ObjectState(target,(8, 3)): 0.6666666666666666, ObjectState(target,(6, 0)): 0.16666666666666666, ObjectState(target,(0, 8)): 0.16666666666666666}
+1 {ObjectState(target,(1, 5)): 0.6666666666666667, ObjectState(target,(6, 5)): 0.16666666666666669, ObjectState(target,(3, 4)): 0.16666666666666669}
+2 {ObjectState(target,(5, 4)): 0.6666666666666666, ObjectState(target,(8, 9)): 0.16666666666666666, ObjectState(target,(7, 6)): 0.16666666666666666}
+-114 {RobotState(robot,(0, 0, 0)|()): 1.0}
+==== Step 2 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -3
+Find Actions Count: 0
+__num_sims__: 631
+#######################
+0 {ObjectState(target,(8, 3)): 0.6666666666666667, ObjectState(target,(6, 0)): 0.16666666666666669, ObjectState(target,(0, 8)): 0.16666666666666669}
+1 {ObjectState(target,(1, 5)): 0.6666666666666666, ObjectState(target,(6, 5)): 0.16666666666666666, ObjectState(target,(3, 4)): 0.16666666666666666}
+2 {ObjectState(target,(5, 4)): 0.6666666666666667, ObjectState(target,(8, 9)): 0.16666666666666669, ObjectState(target,(7, 6)): 0.16666666666666669}
+-114 {RobotState(robot,(1, 0, 0)|()): 1.0}
+==== Step 3 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -5
+Find Actions Count: 0
+__num_sims__: 619
+#######################
+0 {ObjectState(target,(8, 3)): 0.6666666666666666, ObjectState(target,(6, 0)): 0.16666666666666666, ObjectState(target,(0, 8)): 0.16666666666666666}
+1 {ObjectState(target,(1, 5)): 0.6666666666666667, ObjectState(target,(6, 5)): 0.16666666666666669, ObjectState(target,(3, 4)): 0.16666666666666669}
+2 {ObjectState(target,(5, 4)): 0.6666666666666666, ObjectState(target,(8, 9)): 0.16666666666666666, ObjectState(target,(7, 6)): 0.16666666666666666}
+-114 {RobotState(robot,(2, 0, 0)|()): 1.0}
+==== Step 4 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -7
+Find Actions Count: 0
+__num_sims__: 635
+#######################
+0 {ObjectState(target,(8, 3)): 0.6666666666666667, ObjectState(target,(6, 0)): 0.16666666666666669, ObjectState(target,(0, 8)): 0.16666666666666669}
+1 {ObjectState(target,(1, 5)): 0.6666666666666666, ObjectState(target,(6, 5)): 0.16666666666666666, ObjectState(target,(3, 4)): 0.16666666666666666}
+2 {ObjectState(target,(5, 4)): 0.6666666666666667, ObjectState(target,(8, 9)): 0.16666666666666669, ObjectState(target,(7, 6)): 0.16666666666666669}
+-114 {RobotState(robot,(2, 1, 1.5707963267948966)|()): 1.0}
+==== Step 5 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -9
+Find Actions Count: 0
+__num_sims__: 601
+#######################
+0 {ObjectState(target,(8, 3)): 0.6666666666666666, ObjectState(target,(6, 0)): 0.16666666666666666, ObjectState(target,(0, 8)): 0.16666666666666666}
+1 {ObjectState(target,(1, 5)): 0.6666666666666667, ObjectState(target,(6, 5)): 0.16666666666666669, ObjectState(target,(3, 4)): 0.16666666666666669}
+2 {ObjectState(target,(5, 4)): 0.6666666666666666, ObjectState(target,(8, 9)): 0.16666666666666666, ObjectState(target,(7, 6)): 0.16666666666666666}
+-114 {RobotState(robot,(2, 2, 1.5707963267948966)|()): 1.0}
+==== Step 6 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -11
+Find Actions Count: 0
+__num_sims__: 588
+#######################
+0 {ObjectState(target,(8, 3)): 0.6666666666666667, ObjectState(target,(6, 0)): 0.16666666666666669, ObjectState(target,(0, 8)): 0.16666666666666669}
+1 {ObjectState(target,(1, 5)): 0.6666666666666666, ObjectState(target,(6, 5)): 0.16666666666666666, ObjectState(target,(3, 4)): 0.16666666666666666}
+2 {ObjectState(target,(5, 4)): 0.6666666666666667, ObjectState(target,(8, 9)): 0.16666666666666669, ObjectState(target,(7, 6)): 0.16666666666666669}
+-114 {RobotState(robot,(2, 3, 1.5707963267948966)|()): 1.0}
+==== Step 7 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -13
+Find Actions Count: 0
+__num_sims__: 548
+#######################
+0 {ObjectState(target,(8, 3)): 0.6666666666666666, ObjectState(target,(6, 0)): 0.16666666666666666, ObjectState(target,(0, 8)): 0.16666666666666666}
+1 {ObjectState(target,(1, 5)): 0.6666666666666667, ObjectState(target,(6, 5)): 0.16666666666666669, ObjectState(target,(3, 4)): 0.16666666666666669}
+2 {ObjectState(target,(5, 4)): 0.7999999999999999, ObjectState(target,(8, 9)): 0.19999999999999998}
+-114 {RobotState(robot,(3, 3, 0)|()): 1.0}
+==== Step 8 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): -14
+Find Actions Count: 0
+__num_sims__: 577
+#######################
+0 {ObjectState(target,(8, 3)): 0.8, ObjectState(target,(6, 0)): 0.2}
+1 {ObjectState(target,(1, 5)): 0.8, ObjectState(target,(6, 5)): 0.2}
+2 {ObjectState(target,(5, 4)): 0.8, ObjectState(target,(8, 9)): 0.2}
+-114 {RobotState(robot,(3, 3, 0)|()): 1.0}
+==== Step 9 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -16
+Find Actions Count: 0
+__num_sims__: 561
+#######################
+0 {ObjectState(target,(8, 3)): 0.8, ObjectState(target,(6, 0)): 0.2}
+1 {ObjectState(target,(1, 5)): 0.8, ObjectState(target,(6, 5)): 0.2}
+2 {ObjectState(target,(5, 4)): 0.8, ObjectState(target,(8, 9)): 0.2}
+-114 {RobotState(robot,(4, 3, 0)|()): 1.0}
+==== Step 10 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -18
+Find Actions Count: 0
+__num_sims__: 469
+#######################
+0 {ObjectState(target,(8, 3)): 0.8, ObjectState(target,(6, 0)): 0.2}
+1 {ObjectState(target,(1, 5)): 0.8, ObjectState(target,(6, 5)): 0.2}
+2 {ObjectState(target,(5, 4)): 0.8, ObjectState(target,(8, 9)): 0.2}
+-114 {RobotState(robot,(4, 4, 1.5707963267948966)|()): 1.0}
+==== Step 11 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): -19
+Find Actions Count: 0
+__num_sims__: 353
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 4, 1.5707963267948966)|()): 1.0}
+==== Step 12 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -21
+Find Actions Count: 0
+__num_sims__: 546
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 4, 0)|()): 1.0}
+==== Step 13 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -23
+Find Actions Count: 0
+__num_sims__: 511
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 5, 1.5707963267948966)|()): 1.0}
+==== Step 14 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: (6, 5), 2: None})
+Reward: -1
+Reward (Cumulative): -24
+Find Actions Count: 0
+__num_sims__: 522
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 5, 1.5707963267948966)|()): 1.0}
+==== Step 15 ====
+Action: find
+Observation: MosOOObservation({})
+Reward: 1000
+Reward (Cumulative): 976
+Find Actions Count: 1
+__num_sims__: 547
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 5, 1.5707963267948966)|(1,)): 1.0}
+==== Step 16 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 974
+Find Actions Count: 1
+__num_sims__: 537
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 4, 4.71238898038469)|(1,)): 1.0}
+==== Step 17 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 972
+Find Actions Count: 1
+__num_sims__: 577
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 5, 1.5707963267948966)|(1,)): 1.0}
+==== Step 18 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 970
+Find Actions Count: 1
+__num_sims__: 444
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 5, 3.141592653589793)|(1,)): 1.0}
+==== Step 19 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): 969
+Find Actions Count: 1
+__num_sims__: 571
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 5, 3.141592653589793)|(1,)): 1.0}
+==== Step 20 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 967
+Find Actions Count: 1
+__num_sims__: 609
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 4, 4.71238898038469)|(1,)): 1.0}
+==== Step 21 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 965
+Find Actions Count: 1
+__num_sims__: 569
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 4, 0)|(1,)): 1.0}
+==== Step 22 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 963
+Find Actions Count: 1
+__num_sims__: 550
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 3, 4.71238898038469)|(1,)): 1.0}
+==== Step 23 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 961
+Find Actions Count: 1
+__num_sims__: 573
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 2, 4.71238898038469)|(1,)): 1.0}
+==== Step 24 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 959
+Find Actions Count: 1
+__num_sims__: 529
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 1, 4.71238898038469)|(1,)): 1.0}
+==== Step 25 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 957
+Find Actions Count: 1
+__num_sims__: 472
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 0, 4.71238898038469)|(1,)): 1.0}
+==== Step 26 ====
+Action: look
+Observation: MosOOObservation({0: (6, 0), 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): 956
+Find Actions Count: 1
+__num_sims__: 489
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 0, 4.71238898038469)|(1,)): 1.0}
+==== Step 27 ====
+Action: find
+Observation: MosOOObservation({})
+Reward: 1000
+Reward (Cumulative): 1956
+Find Actions Count: 2
+__num_sims__: 351
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 0, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 28 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1954
+Find Actions Count: 2
+__num_sims__: 529
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 0, 3.141592653589793)|(0, 1)): 1.0}
+==== Step 29 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1952
+Find Actions Count: 2
+__num_sims__: 615
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 0, 3.141592653589793)|(0, 1)): 1.0}
+==== Step 30 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1950
+Find Actions Count: 2
+__num_sims__: 585
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 1, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 31 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1948
+Find Actions Count: 2
+__num_sims__: 576
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 2, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 32 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1946
+Find Actions Count: 2
+__num_sims__: 624
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 2, 0)|(0, 1)): 1.0}
+==== Step 33 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1944
+Find Actions Count: 2
+__num_sims__: 568
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 3, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 34 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1942
+Find Actions Count: 2
+__num_sims__: 556
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 4, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 35 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1940
+Find Actions Count: 2
+__num_sims__: 607
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 4, 0)|(0, 1)): 1.0}
+==== Step 36 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1938
+Find Actions Count: 2
+__num_sims__: 579
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 4, 3.141592653589793)|(0, 1)): 1.0}
+==== Step 37 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1936
+Find Actions Count: 2
+__num_sims__: 594
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 4, 0)|(0, 1)): 1.0}
+==== Step 38 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1934
+Find Actions Count: 2
+__num_sims__: 602
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 3, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 39 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1932
+Find Actions Count: 2
+__num_sims__: 482
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 4, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 40 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1930
+Find Actions Count: 2
+__num_sims__: 588
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 5, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 41 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1928
+Find Actions Count: 2
+__num_sims__: 590
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 5, 3.141592653589793)|(0, 1)): 1.0}
+==== Step 42 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1926
+Find Actions Count: 2
+__num_sims__: 553
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 5, 3.141592653589793)|(0, 1)): 1.0}
+==== Step 43 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1924
+Find Actions Count: 2
+__num_sims__: 499
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 5, 0)|(0, 1)): 1.0}
+==== Step 44 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1922
+Find Actions Count: 2
+__num_sims__: 478
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 5, 3.141592653589793)|(0, 1)): 1.0}
+==== Step 45 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1920
+Find Actions Count: 2
+__num_sims__: 587
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 6, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 46 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1918
+Find Actions Count: 2
+__num_sims__: 616
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 6, 0)|(0, 1)): 1.0}
+==== Step 47 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): 1917
+Find Actions Count: 2
+__num_sims__: 554
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 6, 0)|(0, 1)): 1.0}
+==== Step 48 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1915
+Find Actions Count: 2
+__num_sims__: 613
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 6, 3.141592653589793)|(0, 1)): 1.0}
+==== Step 49 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1913
+Find Actions Count: 2
+__num_sims__: 570
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(2, 6, 3.141592653589793)|(0, 1)): 1.0}
+==== Step 50 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1911
+Find Actions Count: 2
+__num_sims__: 580
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(2, 5, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 51 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1909
+Find Actions Count: 2
+__num_sims__: 513
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 5, 0)|(0, 1)): 1.0}
+==== Step 52 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): 1908
+Find Actions Count: 2
+__num_sims__: 573
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 5, 0)|(0, 1)): 1.0}
+==== Step 53 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1906
+Find Actions Count: 2
+__num_sims__: 578
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(3, 4, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 54 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1904
+Find Actions Count: 2
+__num_sims__: 577
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(4, 4, 0)|(0, 1)): 1.0}
+==== Step 55 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1902
+Find Actions Count: 2
+__num_sims__: 542
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 4, 0)|(0, 1)): 1.0}
+==== Step 56 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1900
+Find Actions Count: 2
+__num_sims__: 576
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 3, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 57 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1898
+Find Actions Count: 2
+__num_sims__: 591
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 2, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 58 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1896
+Find Actions Count: 2
+__num_sims__: 559
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 3, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 59 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1894
+Find Actions Count: 2
+__num_sims__: 487
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 2, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 60 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): 1893
+Find Actions Count: 2
+__num_sims__: 387
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 2, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 61 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1891
+Find Actions Count: 2
+__num_sims__: 509
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(5, 3, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 62 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1889
+Find Actions Count: 2
+__num_sims__: 586
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(6, 3, 0)|(0, 1)): 1.0}
+==== Step 63 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1887
+Find Actions Count: 2
+__num_sims__: 462
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(6, 4, 1.5707963267948966)|(0, 1)): 1.0}
+==== Step 64 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1885
+Find Actions Count: 2
+__num_sims__: 532
+#######################
+0 {ObjectState(target,(6, 0)): 1.0}
+1 {ObjectState(target,(6, 5)): 1.0}
+2 {ObjectState(target,(8, 9)): 1.0}
+-114 {RobotState(robot,(6, 3, 4.71238898038469)|(0, 1)): 1.0}
+==== Step 65 ====
+Action: move-xyth-West
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1883
+Find Actions Count: 2
+__num_sims__: 604
