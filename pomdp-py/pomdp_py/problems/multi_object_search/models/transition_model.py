@@ -159,7 +159,7 @@ class RobotTransitionModel(pomdp_py.TransitionModel):
                 if (
                     state.object_states[objid].objclass == "target"
                     and z.objposes[objid] != ObjectObservation.NULL
-                    and state.object_states[objid].objid == len(robot_state["objects_found"])
+                    # and state.object_states[objid].objid == len(robot_state["objects_found"])
                 )
             }
             """

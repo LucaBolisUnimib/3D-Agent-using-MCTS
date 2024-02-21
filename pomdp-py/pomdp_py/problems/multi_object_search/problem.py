@@ -388,9 +388,9 @@ def unittest():
     # print(problem.agent.cur_belief.object_beliefs)
     solve(
         problem,
-        max_depth=30,
+        max_depth=20,
         discount_factor=0.99,
-        planning_time=300.0,
+        planning_time=2.0,
         exploration_const=1000,
         visualize=True,
         max_time=120,

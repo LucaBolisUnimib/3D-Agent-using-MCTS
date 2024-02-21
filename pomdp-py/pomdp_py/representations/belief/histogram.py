@@ -12,6 +12,14 @@ def abstraction_over_histogram(current_histogram, state_mapper):
         hist[a_s] += current_histogram[s]
     return hist
 
+def count_times(pos, obj):
+    count = 0
+    for dispid in range(len(maps.dispositions)):
+        analyze_pos = maps.dispositions[dispid][obj]
+        #print(analyze_pos)
+        if pos == (analyze_pos[0], analyze_pos[1]):
+            count += 1
+    return count
 
 def update_histogram_belief(
     beliefs,
@@ -107,18 +115,22 @@ def update_histogram_belief(
             #1 2 3 1 4 1 5
             #1 2 3 4 5
 
+            change = [False] * len(maps.dispositions)
             for dispid in disp_involved:
                 pos = maps.dispositions[dispid][obj]
                 state = ObjectState(obj, "target", (pos[1], pos[0]))
-                if probabilities_mul[x] == -1.0:
-                    new_histogram.pop(state)
+                if probabilities_mul[x] != 1e-100:
+                    change[disp] = True
+                if count_times(pos, obj) > 1 and probabilities_mul[x] == 1e-100:
+                    pass
                 else:
                     new_histogram[state] = beliefs[obj][state] * probabilities_mul[x]
                 #if maps.disposition[disp][]
                 #new_histogram[next_state] = beliefs[obj][next_state] * probabilities_mul[x]
                 #total_prob += new_histogram[state]
                 # print("DEBUG1", new_histogram)
-
+            #for ele in range(len(change)):
+            #    if not change[ele]
             total_prob = 0.0
             for state in new_histogram:
                 #print("DEV", state, new_histogram[state])

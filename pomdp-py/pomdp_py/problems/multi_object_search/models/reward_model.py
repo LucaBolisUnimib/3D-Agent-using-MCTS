@@ -54,7 +54,7 @@ class GoalRewardModel(MosRewardModel):
             return 0  # no reward or penalty; the task is finished.
 
         if isinstance(action, MotionAction):
-            reward = reward - self.small - action.distance_cost
+            reward = reward - self.small -  action.distance_cost
         elif isinstance(action, LookAction):
             reward = reward - self.small
         elif isinstance(action, FindAction):
@@ -75,7 +75,7 @@ class GoalRewardModel(MosRewardModel):
                     #print("AAA", new_objects_count)
                     #print("BBB", next_state.object_states[robot_id].objects_found)
                     #print("CCC", state.object_states[robot_id].objects_found)
-                    reward += self.big * 100000
+                    reward += self.big
 
         return reward
 

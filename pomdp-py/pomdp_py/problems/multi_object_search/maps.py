@@ -1,25 +1,24 @@
 import numpy as np
 
-dispositions = [[(9, 3), (8, 8), (4, 5)],
-                [(9, 7), (0, 1), (7, 4)],
+dispositions = [[(3, 8), (5, 1), (4, 5)],
+                [(7, 6), (0, 1), (4, 5)],
                 [(0, 6), (5, 6), (9, 8)],
-                [(8, 0), (1, 3), (6, 7)]]
-# probabilty =    [0.7997, 0.0003, 0.1, 0.1]
+                [(8, 0), (4, 3), (6, 7)]]
 probabilty =    [0.2, 0.7, 0.05, 0.05]
 default_grid =  "r.........\n" + \
                 "....x.....\n" + \
+                "......xx..\n" + \
+                ".x........\n" + \
+                ".xx......x\n" + \
                 "..........\n" + \
-                "x.........\n" + \
-                "..x.......\n" + \
-                ".........x\n" + \
-                "...xxxx...\n" + \
                 ".....x...x\n" + \
-                "...x...x..\n" + \
-                "x...x....x"
+                "....xx...x\n" + \
+                "..........\n" + \
+                "x...xx...x"
 length = default_grid.count("\n") + 1
 width = (len(default_grid) - length + 1) // 10
 dispositionid = np.random.choice(list(range(len(dispositions))), 1, p = probabilty)[0]
-dispositionid = 0
+dispositionid = 2
 """
 First disposition (0.5 probability):
 r.........
