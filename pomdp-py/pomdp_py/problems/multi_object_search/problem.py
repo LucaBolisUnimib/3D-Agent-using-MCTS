@@ -146,7 +146,7 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
     # Update agent's belief, when planner is not POMCP
     objects = ["Red", "Green", "Blue"]
     if not isinstance(planner, pomdp_py.POMCP):
-        print("#######################")
+        
         # print(agent.cur_belief.object_beliefs)
         # Update belief for every object
         for objid in agent.cur_belief.object_beliefs:
@@ -156,9 +156,9 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
                     # Assuming the agent can observe its own state:
                     new_belief = pomdp_py.Histogram({next_robot_state: 1.0})
                     agent.cur_belief.set_object_belief(objid, new_belief)
-                    print("Robot: ", belief_obj)
+                    
                 else:
-                    print(objects[objid] + " object: ", belief_obj)
+                    
                     # This is doing
                     #    B(si') = normalizer * O(oi|si',sr',a) * sum_s T(si'|s,a)*B(si)
                     #
@@ -283,6 +283,7 @@ def solve(
     ### _time_used = 0
     _find_actions_count = 0
     _total_reward = 0  # total, undiscounted reward
+    count = 0
     for i in range(max_steps):
         #time.sleep(.5)
         # Plan action
@@ -322,15 +323,7 @@ def solve(
         _total_reward += reward
         if isinstance(real_action, FindAction):
             _find_actions_count += 1
-        print("==== Step %d ====" % (i + 1))
-        print("Action: %s" % str(real_action))
-        print("Observation: %s" % str(real_observation))
-        print("Reward: %s" % str(reward))
-        print("Reward (Cumulative): %s" % str(_total_reward))
-        print("Find Actions Count: %d" % _find_actions_count)
-        if isinstance(planner, pomdp_py.POUCT):
-            print("__num_sims__: %d" % planner.last_num_sims)
-            print()
+        
 
         if visualize:
             # This is used to show the sensing range; Not sampled
@@ -358,14 +351,16 @@ def solve(
             set(problem.env.state.object_states[robot_id].objects_found)
             == problem.env.target_objects
         ):
-            print("Done!")
+            
             break
         if _find_actions_count >= len(problem.env.target_objects):
-            print("FindAction limit reached.")
+            
             break
         ### if _time_used > max_time:
             ### print("Maximum time reached.")
             ### break
+        count = i
+    return count
 
 import sys
 import os, os.path
@@ -374,13 +369,13 @@ import pathlib
 
 # Test
 ROBOT_CHAR = "r" # r is the robot character
-def unittest():
+def unittest(max_depth, planning_time):
     #number_of_simulation = len([name for name in os.listdir('.\logs') if os.path.isfile(name)])
     istant = datetime.now().strftime("%d_%m_%Y_%H_%M_%S_%f")
     
 
     real_dot = pathlib.Path(__file__).parent.resolve()
-    sys.stdout = open(f"{real_dot}\logs\log_{istant}.txt", "w")
+    sys.stdout = open(f"{real_dot}\logs\log25.txt", "w")
 
 
     disposition = maps.dispositions[maps.dispositionid]
@@ -401,17 +396,26 @@ def unittest():
         agent_has_map=True,
     )
     # print(problem.agent.cur_belief.object_beliefs)
-    solve(
+    # max_depth = 20
+    # planning_time = 2.0
+    val = solve(
         problem,
-        max_depth=20,
+        max_depth=max_depth,
         discount_factor=0.99,
-        planning_time=2.0,
+        planning_time=planning_time,
         exploration_const=1000,
         visualize=True,
         max_time=120,
         max_steps=25500,
     )
+    res = (val, max_depth, planning_time)
+    print(res)
+    return res
 
 
 if __name__ == "__main__":
-    unittest()
+    max_depth = 25 #in range(5, 100, 5):
+    for planning_time in range(1, 200, 5):
+        val = unittest(max_depth, planning_time)
+        sys.stdout = sys.__stdout__
+        print(val)
