@@ -1,0 +1,289 @@
+#######################
+Red object:  {ObjectState(target,(8, 3)): 0.2, ObjectState(target,(6, 7)): 0.7, ObjectState(target,(6, 0)): 0.05, ObjectState(target,(0, 8)): 0.05}
+Green object:  {ObjectState(target,(1, 5)): 0.2, ObjectState(target,(1, 0)): 0.7, ObjectState(target,(6, 5)): 0.05, ObjectState(target,(3, 4)): 0.05}
+Blue object:  {ObjectState(target,(5, 4)): 0.2, ObjectState(target,(6, 4)): 0.7, ObjectState(target,(8, 9)): 0.05, ObjectState(target,(7, 6)): 0.05}
+Robot:  {RobotState(robot,(0, 0, 0)|()): 1.0}
+==== Step 1 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -2
+Find Actions Count: 0
+__num_sims__: 167
+#######################
+Red object:  {ObjectState(target,(8, 3)): 0.2, ObjectState(target,(6, 7)): 0.7, ObjectState(target,(6, 0)): 0.05, ObjectState(target,(0, 8)): 0.05}
+Green object:  {ObjectState(target,(1, 5)): 0.2, ObjectState(target,(1, 0)): 0.7, ObjectState(target,(6, 5)): 0.05, ObjectState(target,(3, 4)): 0.05}
+Blue object:  {ObjectState(target,(5, 4)): 0.2, ObjectState(target,(6, 4)): 0.7, ObjectState(target,(8, 9)): 0.05, ObjectState(target,(7, 6)): 0.05}
+Robot:  {RobotState(robot,(1, 0, 0)|()): 1.0}
+==== Step 2 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -4
+Find Actions Count: 0
+__num_sims__: 362
+#######################
+Red object:  {ObjectState(target,(8, 3)): 0.2, ObjectState(target,(6, 7)): 0.7, ObjectState(target,(6, 0)): 0.05, ObjectState(target,(0, 8)): 0.05}
+Green object:  {ObjectState(target,(1, 5)): 0.2, ObjectState(target,(1, 0)): 0.7, ObjectState(target,(6, 5)): 0.05, ObjectState(target,(3, 4)): 0.05}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(2, 0, 0)|()): 1.0}
+==== Step 3 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: (1, 0), 2: None})
+Reward: -1
+Reward (Cumulative): -5
+Find Actions Count: 0
+__num_sims__: 312
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(2, 0, 0)|()): 1.0}
+==== Step 4 ====
+Action: find
+Observation: MosOOObservation({})
+Reward: 1000
+Reward (Cumulative): 995
+Find Actions Count: 1
+__num_sims__: 297
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(2, 0, 0)|(1,)): 1.0}
+==== Step 5 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 993
+Find Actions Count: 1
+__num_sims__: 244
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(2, 1, 1.5707963267948966)|(1,)): 1.0}
+==== Step 6 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 991
+Find Actions Count: 1
+__num_sims__: 293
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(2, 0, 4.71238898038469)|(1,)): 1.0}
+==== Step 7 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 989
+Find Actions Count: 1
+__num_sims__: 361
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(2, 1, 1.5707963267948966)|(1,)): 1.0}
+==== Step 8 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 987
+Find Actions Count: 1
+__num_sims__: 265
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(2, 0, 4.71238898038469)|(1,)): 1.0}
+==== Step 9 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 985
+Find Actions Count: 1
+__num_sims__: 415
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(3, 0, 0)|(1,)): 1.0}
+==== Step 10 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 983
+Find Actions Count: 1
+__num_sims__: 511
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(3, 1, 1.5707963267948966)|(1,)): 1.0}
+==== Step 11 ====
+Action: move-xyth-North
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 981
+Find Actions Count: 1
+__num_sims__: 497
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(3, 0, 4.71238898038469)|(1,)): 1.0}
+==== Step 12 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 979
+Find Actions Count: 1
+__num_sims__: 283
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(3, 1, 1.5707963267948966)|(1,)): 1.0}
+==== Step 13 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 977
+Find Actions Count: 1
+__num_sims__: 225
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(3, 2, 1.5707963267948966)|(1,)): 1.0}
+==== Step 14 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 975
+Find Actions Count: 1
+__num_sims__: 354
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(4, 2, 0)|(1,)): 1.0}
+==== Step 15 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 973
+Find Actions Count: 1
+__num_sims__: 378
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(5, 2, 0)|(1,)): 1.0}
+==== Step 16 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 971
+Find Actions Count: 1
+__num_sims__: 423
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(5, 3, 1.5707963267948966)|(1,)): 1.0}
+==== Step 17 ====
+Action: move-xyth-East
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 969
+Find Actions Count: 1
+__num_sims__: 359
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(6, 3, 0)|(1,)): 1.0}
+==== Step 18 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: (6, 4)})
+Reward: -1
+Reward (Cumulative): 968
+Find Actions Count: 1
+__num_sims__: 371
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428575e-201, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-202, ObjectState(target,(0, 8)): 7.142857142857144e-202}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428575e-201, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-202, ObjectState(target,(3, 4)): 7.142857142857144e-202}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428575e-201, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-202, ObjectState(target,(7, 6)): 7.142857142857144e-202}
+Robot:  {RobotState(robot,(6, 3, 0)|(1,)): 1.0}
+==== Step 19 ====
+Action: find
+Observation: MosOOObservation({})
+Reward: 1000
+Reward (Cumulative): 1968
+Find Actions Count: 2
+__num_sims__: 435
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428575e-201, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-202, ObjectState(target,(0, 8)): 7.142857142857144e-202}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428575e-201, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-202, ObjectState(target,(3, 4)): 7.142857142857144e-202}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428575e-201, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-202, ObjectState(target,(7, 6)): 7.142857142857144e-202}
+Robot:  {RobotState(robot,(6, 3, 0)|(1, 2)): 1.0}
+==== Step 20 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1966
+Find Actions Count: 2
+__num_sims__: 375
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428575e-201, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-202, ObjectState(target,(0, 8)): 7.142857142857144e-202}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428575e-201, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-202, ObjectState(target,(3, 4)): 7.142857142857144e-202}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428575e-201, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-202, ObjectState(target,(7, 6)): 7.142857142857144e-202}
+Robot:  {RobotState(robot,(6, 4, 1.5707963267948966)|(1, 2)): 1.0}
+==== Step 21 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1964
+Find Actions Count: 2
+__num_sims__: 467
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428575e-201, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-202, ObjectState(target,(0, 8)): 7.142857142857144e-202}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428575e-201, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-202, ObjectState(target,(3, 4)): 7.142857142857144e-202}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428575e-201, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-202, ObjectState(target,(7, 6)): 7.142857142857144e-202}
+Robot:  {RobotState(robot,(6, 5, 1.5707963267948966)|(1, 2)): 1.0}
+==== Step 22 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): 1962
+Find Actions Count: 2
+__num_sims__: 410
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428575e-201, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-202, ObjectState(target,(0, 8)): 7.142857142857144e-202}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-202, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(6, 6, 1.5707963267948966)|(1, 2)): 1.0}
+==== Step 23 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: None, 2: None})
+Reward: -1
+Reward (Cumulative): 1961
+Find Actions Count: 2
+__num_sims__: 259
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-202, ObjectState(target,(0, 8)): 7.142857142857144e-202}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-202, ObjectState(target,(3, 4)): 7.142857142857144e-202}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-202, ObjectState(target,(7, 6)): 7.142857142857144e-202}
+Robot:  {RobotState(robot,(6, 6, 1.5707963267948966)|(1, 2)): 1.0}
+==== Step 24 ====
+Action: find
+Observation: MosOOObservation({})
+Reward: 1000
+Reward (Cumulative): 2961
+Find Actions Count: 3
+__num_sims__: 300
+Done!

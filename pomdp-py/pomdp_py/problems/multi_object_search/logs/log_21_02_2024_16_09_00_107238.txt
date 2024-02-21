@@ -1,0 +1,24 @@
+#######################
+Red object:  {ObjectState(target,(8, 3)): 0.2, ObjectState(target,(6, 7)): 0.7, ObjectState(target,(6, 0)): 0.05, ObjectState(target,(0, 8)): 0.05}
+Green object:  {ObjectState(target,(1, 5)): 0.2, ObjectState(target,(1, 0)): 0.7, ObjectState(target,(6, 5)): 0.05, ObjectState(target,(3, 4)): 0.05}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428576e-101, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-102, ObjectState(target,(7, 6)): 7.142857142857144e-102}
+Robot:  {RobotState(robot,(0, 0, 0)|()): 1.0}
+==== Step 1 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: (1, 0), 2: None})
+Reward: -1
+Reward (Cumulative): -1
+Find Actions Count: 0
+__num_sims__: 280
+#######################
+Red object:  {ObjectState(target,(8, 3)): 2.8571428571428576e-101, ObjectState(target,(6, 7)): 1.0, ObjectState(target,(6, 0)): 7.142857142857144e-102, ObjectState(target,(0, 8)): 7.142857142857144e-102}
+Green object:  {ObjectState(target,(1, 5)): 2.8571428571428576e-101, ObjectState(target,(1, 0)): 1.0, ObjectState(target,(6, 5)): 7.142857142857144e-102, ObjectState(target,(3, 4)): 7.142857142857144e-102}
+Blue object:  {ObjectState(target,(5, 4)): 2.8571428571428575e-201, ObjectState(target,(6, 4)): 1.0, ObjectState(target,(8, 9)): 7.142857142857144e-202, ObjectState(target,(7, 6)): 7.142857142857144e-202}
+Robot:  {RobotState(robot,(0, 0, 0)|()): 1.0}
+==== Step 2 ====
+Action: look
+Observation: MosOOObservation({0: None, 1: (1, 0), 2: None})
+Reward: -1
+Reward (Cumulative): -2
+Find Actions Count: 0
+__num_sims__: 446

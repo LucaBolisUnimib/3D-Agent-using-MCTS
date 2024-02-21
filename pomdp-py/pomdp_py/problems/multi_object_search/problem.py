@@ -369,6 +369,7 @@ def solve(
 import sys
 import os, os.path
 from datetime import datetime
+import pathlib
 
 # Test
 ROBOT_CHAR = "r" # r is the robot character
@@ -376,9 +377,9 @@ def unittest():
     #number_of_simulation = len([name for name in os.listdir('.\logs') if os.path.isfile(name)])
     istant = datetime.now().strftime("%d_%m_%Y_%H_%M_%S_%f")
     
-    sys.stdout = open(f".\logs\log_{istant}.txt", "w")
 
-
+    real_dot = pathlib.Path(__file__).parent.resolve()
+    sys.stdout = open(f"{real_dot}\logs\log_{istant}.txt", "w")
 
 
     disposition = maps.dispositions[maps.dispositionid]
