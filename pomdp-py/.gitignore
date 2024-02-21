@@ -5,7 +5,6 @@
 *.aux
 *.bbl
 *.blg
-*.log
 *.out
 *.pdf
 *.mtc*
@@ -64,7 +63,6 @@ Demos/*/*.html
 *.orig
 *.prof
 *.rej
-*.log
 *.dep
 *.swp
 *~
@@ -116,7 +114,6 @@ docs/_sphinx_src/changelog.rst
 
 # Logs and databases #
 ######################
-*.log
 *.sql
 *.sqlite
 
