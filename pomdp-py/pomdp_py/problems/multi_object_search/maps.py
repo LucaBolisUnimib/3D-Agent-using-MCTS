@@ -1,7 +1,7 @@
 import numpy as np
 
 dispositions = [[(3, 8), (5, 1), (4, 5)],
-                [(7, 6), (0, 1), (4, 5)],
+                [(7, 6), (0, 1), (4, 6)],
                 [(0, 6), (5, 6), (9, 8)],
                 [(8, 0), (4, 3), (6, 7)]]
 probabilty =    [0.2, 0.7, 0.05, 0.05]
@@ -18,7 +18,7 @@ default_grid =  "r.........\n" + \
 length = default_grid.count("\n") + 1
 width = (len(default_grid) - length + 1) // 10
 dispositionid = np.random.choice(list(range(len(dispositions))), 1, p = probabilty)[0]
-dispositionid = 2
+dispositionid = 3
 """
 First disposition (0.5 probability):
 r.........

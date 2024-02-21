@@ -31,9 +31,7 @@ extensions = build_extensions(
         "algorithms",
         "utils",
         "representations.distribution",
-        "representations.belief",
-        "problems.tiger.cythonize",
-        "problems.rocksample.cythonize",
+        "representations.belief"
     ],
 )
 
