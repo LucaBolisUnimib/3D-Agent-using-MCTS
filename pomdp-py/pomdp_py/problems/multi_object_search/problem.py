@@ -144,19 +144,21 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
     #print(dir(agent))
 
     # Update agent's belief, when planner is not POMCP
+    objects = ["Red", "Green", "Blue"]
     if not isinstance(planner, pomdp_py.POMCP):
         print("#######################")
         # print(agent.cur_belief.object_beliefs)
         # Update belief for every object
         for objid in agent.cur_belief.object_beliefs:
             belief_obj = agent.cur_belief.object_belief(objid)
-            print(objid, belief_obj)
             if isinstance(belief_obj, pomdp_py.Histogram):
                 if objid == agent.robot_id:
                     # Assuming the agent can observe its own state:
                     new_belief = pomdp_py.Histogram({next_robot_state: 1.0})
                     agent.cur_belief.set_object_belief(objid, new_belief)
+                    print("Robot: ", belief_obj)
                 else:
+                    print(objects[objid] + " object: ", belief_obj)
                     # This is doing
                     #    B(si') = normalizer * O(oi|si',sr',a) * sum_s T(si'|s,a)*B(si)
                     #
