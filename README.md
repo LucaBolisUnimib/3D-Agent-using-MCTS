@@ -1,7 +1,7 @@
 # 3D-Agent-using-MCTS
 ## Installation
 > [!IMPORTANT]
-> In order to edit the packages content you must fillow this directions:
+> In order to edit the packages content you must follow this directions:
 
 1. Install Cython:
 ```
