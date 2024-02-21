@@ -114,17 +114,11 @@ def update_histogram_belief(
 
             #1 2 3 1 4 1 5
             #1 2 3 4 5
-
-            change = [False] * len(maps.dispositions)
+            
             for dispid in disp_involved:
                 pos = maps.dispositions[dispid][obj]
                 state = ObjectState(obj, "target", (pos[1], pos[0]))
-                if probabilities_mul[x] != 1e-100:
-                    change[disp] = True
-                if count_times(pos, obj) > 1 and probabilities_mul[x] == 1e-100:
-                    pass
-                else:
-                    new_histogram[state] = beliefs[obj][state] * probabilities_mul[x]
+                new_histogram[state] = beliefs[obj][state] * probabilities_mul[x]
                 #if maps.disposition[disp][]
                 #new_histogram[next_state] = beliefs[obj][next_state] * probabilities_mul[x]
                 #total_prob += new_histogram[state]
