@@ -25,12 +25,12 @@ python -m problem
 ### Expected output:
 1. Initial State
 
-   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/initial.jpg)
+   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/initial.JPG)
   > [!TIP]
   > We use different colors to identify different objects. The color intesity rapresents their probability to be found in that spot i.e. the agents belief. 
 2. Looks
 
-   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/look.PNG)
+   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/look.JPG)
   > Looks are often executed to improve the agents belief.  
 
 3. Final State
