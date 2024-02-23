@@ -23,9 +23,9 @@ and run problem.py:
 python -m problem
 ```
 > [!NOTE]
-> User the following parameters to better feat your needs:__
-> --f Logs are written on a txt file saved in the directory logs__
-> --sorted The agent solves the Monte Carlo problem following this order: Red, Green, Blu__
+> User the following parameters to better feat your needs: <br />
+> --f Logs are written on a txt file saved in the directory logs <br />
+> --sorted The agent solves the Monte Carlo problem following this order: Red, Green, Blu<br />
 ### Expected output:
 1. Initial State
 
