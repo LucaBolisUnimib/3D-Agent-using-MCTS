@@ -24,7 +24,7 @@ python -m problem
 ```
 > [!NOTE]
 > User the following parameters to better fit your needs: <br />
-> ```--f``` Logs are written on a txt file saved in the directory "\logs" <br />
+> ```--f``` Logs are written on a txt file saved in the directory "\saved_states" <br />
 > ```--sorted``` The agent solves the problem following this order: Red, Green, Blu<br />
 ### Expected output:
 1. Initial State

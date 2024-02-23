@@ -1,0 +1,13 @@
+#######################
+Red object:  {ObjectState(target,(8, 3)): 0.5, ObjectState(target,(6, 7)): 0.3, ObjectState(target,(6, 0)): 0.1, ObjectState(target,(0, 8)): 0.1}
+Green object:  {ObjectState(target,(1, 5)): 0.5, ObjectState(target,(1, 0)): 0.3, ObjectState(target,(6, 5)): 0.1, ObjectState(target,(3, 4)): 0.1}
+Blue object:  {ObjectState(target,(5, 4)): 0.8, ObjectState(target,(8, 9)): 0.1, ObjectState(target,(7, 6)): 0.1}
+Robot:  {RobotState(robot,(0, 0, 0)|()): 1.0}
+==== Step 1 ====
+Action: move-xyth-South
+Observation: MosOOObservation({})
+Reward: -2
+Reward (Cumulative): -2
+Find Actions Count: 0
+__num_sims__: 545
+

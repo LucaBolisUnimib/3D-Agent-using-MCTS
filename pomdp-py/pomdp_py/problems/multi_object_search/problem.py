@@ -326,7 +326,7 @@ def unittest():
     if file_logs:
         istant = datetime.now().strftime(r"%d_%m_%Y_%H_%M_%S_%f")
         real_dot = pathlib.Path(__file__).parent.resolve()
-        sys.stdout = open(f"{real_dot}\\logs\\log_{istant}.txt", "w")
+        sys.stdout = open(f"{real_dot}\saved_states\log_{istant}.txt", "w")
 
     disposition = maps.dispositions[maps.dispositionid]
     grid_map = list(maps.default_grid)
