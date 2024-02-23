@@ -11,9 +11,11 @@ from pomdp_py.problems.multi_object_search.example_worlds import *
 from pomdp_py.problems.multi_object_search.domain.observation import *
 from pomdp_py.problems.multi_object_search.models.components.grid_map import *
 import argparse
-import time
 import random
 import maps
+import sys
+from datetime import datetime
+import pathlib
 
 
 class MosOOPOMDP(pomdp_py.OOPOMDP):
@@ -82,18 +84,7 @@ class MosOOPOMDP(pomdp_py.OOPOMDP):
             env = MosEnvironment(dim, init_state, sensors, obstacles=obstacles)
 
         prior = {}
-        # construct prior
-        #if type(prior) == str:
-        #    if prior == "uniform":
-        #        prior = {}
-        #    elif prior == "informed":
-        #        prior = {}
-        #        for objid in env.target_objects:
-        #            groundtruth_pose = env.state.pose(objid)
-                    # print(groundtruth_pose)
-        #            prior[objid] = {groundtruth_pose: 0.9}
-                    # print(prior)
-                    # print(env.target_objects)
+        
         # Potential extension: a multi-agent POMDP. For now, the environment
         # can keep track of the states of multiple agents, but a POMDP is still
         # only defined over a single agent. Perhaps, MultiAgent is just a kind
@@ -134,20 +125,12 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
     through planner update (e.g. when planner is POMCP)."""
     # Updates the planner; In case of POMCP, agent's belief is also updated.
     
-    # print("prima")
-    #print(agent.cur_belief.object_beliefs[4])
-    
     planner.update(agent, real_action, real_observation)
-    # print("dopo")
-    #print(agent.cur_belief.object_beliefs[4])
-
-    #print(dir(agent))
 
     # Update agent's belief, when planner is not POMCP
     objects = ["Red", "Green", "Blue"]
     if not isinstance(planner, pomdp_py.POMCP):
         print("#######################")
-        # print(agent.cur_belief.object_beliefs)
         # Update belief for every object
         for objid in agent.cur_belief.object_beliefs:
             belief_obj = agent.cur_belief.object_belief(objid)
@@ -186,17 +169,6 @@ def belief_update(agent, real_action, real_observation, next_robot_state, planne
                     # observation model from O(oi|s',a) to O(label_i|s',a) and
                     # it becomes easy to define O(label_i=i|s',a) and O(label_i=FREE|s',a).
                     # These ideas are used in my recent 3D object search work.
-                    #print("QUIIIIIIiii")
-                    #print(real_observation)
-                    #print()
-                    #print(real_observation.for_obj(objid))
-                    #print(real_observation.for_obj(objid).objid) # id dell'oggetto
-                    #print(real_observation.for_obj(objid).pose) # None se l'oggetto {objid} non è osservato, la tupla con la posizione (?) se invece vedo l'oggetto
-                    #print(agent.observation_model[objid])
-                    #print(next_robot_state)
-                    #print("#_#")
-                    #print(dir(agent.transition_model[objid]))
-                    #print("#_#")
 
                     new_belief = pomdp_py.update_histogram_belief(
                         agent.cur_belief.object_beliefs,
@@ -242,9 +214,6 @@ def solve(
 
     random_objid = random.sample(sorted(problem.env.target_objects), 1)[0]
     random_object_belief = problem.agent.belief.object_beliefs[random_objid]
-    #print(problem.print_prior())
-    #print(problem.print_prior())
-    #print(problem.agent.belief.object_beliefs)
     if isinstance(random_object_belief, pomdp_py.Histogram):
         # Use POUCT
         planner = pomdp_py.POUCT(
@@ -256,8 +225,6 @@ def solve(
         )  # Random by default
     elif isinstance(random_object_belief, pomdp_py.Particles):
         # Use POMCP
-        #print("OK")
-        #print(random_object_belief.prior)
         planner = pomdp_py.POMCP(
             max_depth=max_depth,
             discount_factor=discount_factor,
@@ -284,13 +251,8 @@ def solve(
     _find_actions_count = 0
     _total_reward = 0  # total, undiscounted reward
     for i in range(max_steps):
-        #time.sleep(.5)
         # Plan action
-        ### _start = time.time()
         real_action = planner.plan(problem.agent)
-        ### _time_used += time.time() - _start
-        ### if _time_used > max_time:
-            ### break  # no more time to update.
 
         # Execute action
         reward = problem.env.state_transition(
@@ -298,7 +260,6 @@ def solve(
         )
 
         # Receive observation
-        ### _start = time.time()
         real_observation = problem.env.provide_observation(
             problem.agent.observation_model, real_action
         )
@@ -306,9 +267,6 @@ def solve(
         # Updates
         problem.agent.clear_history()  # truncate history
         problem.agent.update_history(real_action, real_observation)
-        # print("#")
-        # print(real_observation)
-        # print("#")
         belief_update(
             problem.agent,
             real_action,
@@ -316,7 +274,6 @@ def solve(
             problem.env.state.object_states[robot_id],
             planner,
         )
-        ### _time_used += time.time() - _start
 
         # Info and render
         _total_reward += reward
@@ -363,33 +320,20 @@ def solve(
         if _find_actions_count >= len(problem.env.target_objects):
             print("FindAction limit reached.")
             break
-        ### if _time_used > max_time:
-            ### print("Maximum time reached.")
-            ### break
 
-import sys
-import os, os.path
-from datetime import datetime
-import pathlib
-
-# Test
 ROBOT_CHAR = "r" # r is the robot character
 def unittest():
-    #number_of_simulation = len([name for name in os.listdir('.\logs') if os.path.isfile(name)])
-    istant = datetime.now().strftime("%d_%m_%Y_%H_%M_%S_%f")
-    
-
-    real_dot = pathlib.Path(__file__).parent.resolve()
-    sys.stdout = open(f"{real_dot}\logs\log_{istant}.txt", "w")
-
+    if file_logs:
+        istant = datetime.now().strftime(r"%d_%m_%Y_%H_%M_%S_%f")
+        real_dot = pathlib.Path(__file__).parent.resolve()
+        sys.stdout = open(f"{real_dot}\\logs\\log_{istant}.txt", "w")
 
     disposition = maps.dispositions[maps.dispositionid]
-    # print(disposition)
     grid_map = list(maps.default_grid)
     for obj in disposition:
         grid_map[obj[0] * (maps.width + 1) + obj[1]] = "T"
     grid_map = "".join(grid_map)
-    # print(grid_map)
+
     proxstr = make_proximity_sensor(1, False)
     problem = MosOOPOMDP(
         ROBOT_CHAR, 
@@ -400,18 +344,25 @@ def unittest():
         prior="informed",
         agent_has_map=True,
     )
-    # print(problem.agent.cur_belief.object_beliefs)
     solve(
         problem,
         max_depth=20,
         discount_factor=0.99,
-        planning_time=2.0,
+        planning_time=3.0,
         exploration_const=1000,
         visualize=True,
         max_time=120,
         max_steps=25500,
     )
 
+file_logs = False
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--sorted', action=argparse.BooleanOptionalAction, default=False)
+    parser.add_argument('--f', action=argparse.BooleanOptionalAction, default=False, 
+                            help="Logs are written on a txt file saved in the directory logs")
+    args = parser.parse_args()
+    maps.sorted = args.sorted
+    file_logs = args.f
     unittest()

@@ -72,14 +72,6 @@ class GoalRewardModel(MosRewardModel):
                     reward -= self.big
                 
                 else:
-                    #print("AAA", new_objects_count)
-                    #print("BBB", next_state.object_states[robot_id].objects_found)
-                    #print("CCC", state.object_states[robot_id].objects_found)
                     reward += self.big
 
         return reward
-
-"""
-detected_objects = set(next_state.object_states[robot_id].objects_found)
-                    for obj_id in detected_objects:
-"""                 

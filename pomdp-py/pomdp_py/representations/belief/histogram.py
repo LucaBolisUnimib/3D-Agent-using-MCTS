@@ -34,7 +34,7 @@ def update_histogram_belief(
     static_transition=False,
     next_state_space=None
 ):
-    """
+    r"""
     update_histogram_belief(current_histogram, real_action, real_observation,
                             observation_model, transition_model, oargs={},
                             targs={}, normalize=True, deterministic=False)
@@ -74,68 +74,34 @@ def update_histogram_belief(
         observation_prob = observation_model.probability(
             real_observation, next_state, real_action, **oargs
         )
-        probabilities_mul.append(observation_prob)
-
-    """
-    for obj in beliefs:
-        print("DEBUGX", beliefs[obj], obj)
-        new_histogram = {}  # state space still the same.
-        total_prob = 0
-        for x, next_state in enumerate(beliefs[obj]):
-            new_histogram[next_state] = beliefs[obj][next_state] * probabilities_mul[x]
-            total_prob += new_histogram[next_state]
-        print("DEBUG1", new_histogram)
-    """
-    # print("DEBUG",beliefs)
+        probabilities_mul.append((observation_prob, next_state.pose))
+    
     for x, next_state in enumerate(beliefs[objid]):
-        # print("DEBUG", next_state) # ObjectState(target,(6, 0))
         disp_involved = []
         for disp in range(len(maps.dispositions)):
-            # print(next_state.pose, next_state.objid)
             pos = maps.dispositions[disp][next_state.objid]
             if next_state.pose == (pos[1], pos[0]):
                 disp_involved.append(disp)
-        # print("DEBUG", disp_involved) # ci stampa l'indice delle disposizioni di cui dobbiamo modificare le probabilità
-        
        
         for obj in range(len(maps.dispositions[0])):
-            #print(obj)
             new_histogram = {}
             for obj_bel in beliefs[obj]:
                 new_histogram[obj_bel] = beliefs[obj][obj_bel]
-            #print(new_histogram)
-            """
-            for disp in range(len(maps.dispositions)):
-                new_histogram =  {} # state space still the same.
-                total_prob = 0
-                state = ObjectState(, "target", (pos[1], pos[0]))
-                new_histogram[state] = beliefs[obj]
-            """
 
-            #1 2 3 1 4 1 5
-            #1 2 3 4 5
-            
             for dispid in disp_involved:
                 pos = maps.dispositions[dispid][obj]
                 state = ObjectState(obj, "target", (pos[1], pos[0]))
-                new_histogram[state] = beliefs[obj][state] * probabilities_mul[x]
-                #if maps.disposition[disp][]
-                #new_histogram[next_state] = beliefs[obj][next_state] * probabilities_mul[x]
-                #total_prob += new_histogram[state]
-                # print("DEBUG1", new_histogram)
-            #for ele in range(len(change)):
-            #    if not change[ele]
+                if probabilities_mul[x][1] == (pos[1], pos[0]):
+                    new_histogram[state] = beliefs[obj][state] * probabilities_mul[x][0]
+
             total_prob = 0.0
             for state in new_histogram:
-                #print("DEV", state, new_histogram[state])
                 total_prob += new_histogram[state]
-            #print()
+
             #  Normalize
             if normalize:
                 for state in new_histogram:
                     if total_prob > 0:
                         new_histogram[state] /= total_prob
-            #print("DEBUG", new_histogram, probabilities_mul[x])
             beliefs[obj] = Histogram(new_histogram)
-    #print(beliefs, len(beliefs))
     return beliefs

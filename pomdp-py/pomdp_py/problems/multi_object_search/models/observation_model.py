@@ -85,8 +85,6 @@ class ObjectObservationModel(pomdp_py.ObservationModel):
             next_state (State)
             action (Action)
         """
-        #if observation.objid == 4:
-        #    return 1e-100
         if not isinstance(action, LookAction):
             # No observation should be received
             if observation.pose == ObjectObservation.NULL:
@@ -94,89 +92,18 @@ class ObjectObservationModel(pomdp_py.ObservationModel):
             else:
                 return 0.0
         
-        # print("DEBUG3", observation.pose)
-        
-        # print("DEBUGGGG", self._sensor.robot_id) 
         next_robot_state = kwargs.get("next_robot_state", None)
         robot_pose = next_robot_state.pose
-        # print(next_robot_state.objects_found)
         object_pose = next_state.pose
-        # Compute the probability
         zi = self._sensor.within_range(robot_pose, object_pose)
-        # print("DEBUG5", zi)
-        #if(next_state["id"] != self._objid):
-        #    prob = 1.0
-        # print("DEBUGX", zi, observation.pose)
+
         if zi and observation.pose == ObjectObservation.NULL:
             prob = 1e-100
-        elif zi: #and len(next_robot_state.objects_found) == observation.objid:
-            # print("OKKKKKKKKKKKKKKKKKKKKKKKKKK")
+        elif zi:
             prob = 1e100
         else:
             prob = 1.0
         
-        return prob
-    
-        if observation.objid != self._objid:
-            raise ValueError("The observation is not about the same object")
-
-        # The (funny) business of allowing histogram belief update using O(oi|si',sr',a).
-        next_robot_state = kwargs.get("next_robot_state", None)
-        if next_robot_state is not None:
-            assert (
-                next_robot_state["id"] == self._sensor.robot_id
-            ), "Robot id of observation model mismatch with given state"
-            robot_pose = next_robot_state.pose
-            print("ABCD")
-            print(next_state["id"])
-            print(self._objid)
-            if isinstance(next_state, ObjectState):
-                assert (
-                    next_state["id"] == self._objid
-                ), "Object id of observation model mismatch with given state"
-                object_pose = next_state.pose
-            else:
-                object_pose = next_state.pose(self._objid)
-        else:
-            robot_pose = next_state.pose(self._sensor.robot_id)
-            object_pose = next_state.pose(self._objid)
-
-        # Compute the probability
-        zi = observation.pose
-        alpha, beta, gamma = self._compute_params(
-            self._sensor.within_range(robot_pose, object_pose)
-        )
-
-        # Requires Python >= 3.6
-        prob = 0.0
-        # Event A:
-        # object in sensing region and observation comes from object i
-        if zi == ObjectObservation.NULL:
-            # Even though event A occurred, the observation is NULL.
-            # This has 0.0 probability.
-            prob += 0.0 * alpha
-        else:
-            gaussian = pomdp_py.Gaussian(
-                list(object_pose), [[self.sigma**2, 0], [0, self.sigma**2]]
-            )
-            prob += gaussian[zi] * alpha
-
-        # Event B
-        prob += (1.0 / self._sensor.sensing_region_size) * beta
-
-        # Event C
-        pr_c = 1.0 if zi == ObjectObservation.NULL else 0.0  # indicator zi == NULL
-        prob += pr_c * gamma
-        print("|||||||||")
-        print(prob)
-        #prob = 1.0
-        #print("LLLA", observation.objid)
-        #print("LLLA", observation.pose)
-        if(observation.objid == ObjectObservation.NULL):
-            prob = 0.0
-        else:
-            prob = 1.0
-        #prob = 1.0
         return prob
 
     def sample(self, next_state, action, **kwargs):
