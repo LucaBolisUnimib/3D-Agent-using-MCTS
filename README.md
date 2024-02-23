@@ -22,19 +22,23 @@ and run problem.py:
 ```
 python -m problem
 ```
+> [!NOTE]
+> User the following parameters to better fit your needs: <br />
+> ```--f``` Logs are written on a txt file saved in the directory "\logs" <br />
+> ```--sorted``` The agent solves the problem following this order: Red, Green, Blu<br />
 ### Expected output:
 1. Initial State
 
-   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/situazione_iniziale.PNG)
+   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/initial.JPG)
   > [!TIP]
   > We use different colors to identify different objects. The color intesity rapresents their probability to be found in that spot i.e. the agents belief. 
 2. Looks
 
-   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/look.PNG)
+   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/look.JPG)
   > Looks are often executed to improve the agents belief.  
 
 3. Final State
 
-   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/Done.PNG)
+   ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](Screenshots/final.JPG)
 > [!NOTE]
 > The different map configurations are stored and selected in the file pomdp-py\pomdp_py\problems\multi_object_search\maps.py 
