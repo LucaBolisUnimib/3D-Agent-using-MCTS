@@ -16,8 +16,7 @@ def count_times(pos, obj):
     count = 0
     for dispid in range(len(maps.dispositions)):
         analyze_pos = maps.dispositions[dispid][obj]
-        #print(analyze_pos)
-        if pos == (analyze_pos[0], analyze_pos[1]):
+        if pos == analyze_pos: #(analyze_pos[1], analyze_pos[0]):
             count += 1
     return count
 
@@ -74,34 +73,25 @@ def update_histogram_belief(
         observation_prob = observation_model.probability(
             real_observation, next_state, real_action, **oargs
         )
-        probabilities_mul.append((observation_prob, next_state.pose))
+        probabilities_mul.append((observation_prob, next_state.objid, next_state.pose))
     
-    for x, next_state in enumerate(beliefs[objid]):
-        disp_involved = []
-        for disp in range(len(maps.dispositions)):
-            pos = maps.dispositions[disp][next_state.objid]
-            if next_state.pose == (pos[1], pos[0]):
-                disp_involved.append(disp)
-       
-        for obj in range(len(maps.dispositions[0])):
-            new_histogram = {}
-            for obj_bel in beliefs[obj]:
-                new_histogram[obj_bel] = beliefs[obj][obj_bel]
+    for mul in probabilities_mul:
+        if mul[0] != 1.0:
+            for dispid in range(len(maps.dispositions)):
+                pos = maps.dispositions[dispid][mul[1]]
+                if (pos[1], pos[0]) == mul[2]:
+                    for id, element in enumerate(maps.dispositions[dispid]):
+                        if count_times(element, id) == 1 or (element[1], element[0]) == mul[2] or mul[0] == 1e100:
+                            state = ObjectState(id, "target", (element[1], element[0]))
+                            beliefs[id][state] = beliefs[id][state] * mul[0]
 
-            for dispid in disp_involved:
-                pos = maps.dispositions[dispid][obj]
-                state = ObjectState(obj, "target", (pos[1], pos[0]))
-                if probabilities_mul[x][1] == (pos[1], pos[0]):
-                    new_histogram[state] = beliefs[obj][state] * probabilities_mul[x][0]
-
-            total_prob = 0.0
-            for state in new_histogram:
-                total_prob += new_histogram[state]
-
-            #  Normalize
-            if normalize:
-                for state in new_histogram:
-                    if total_prob > 0:
-                        new_histogram[state] /= total_prob
-            beliefs[obj] = Histogram(new_histogram)
+    #  Normalize
+    if normalize:
+        for obj in beliefs:
+            total_prob = 0
+            for state in beliefs[obj]:
+                total_prob += beliefs[obj][state]
+            for state in beliefs[obj]:
+                if total_prob > 0:
+                    beliefs[obj][state] /= total_prob
     return beliefs
